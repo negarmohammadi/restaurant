@@ -1,0 +1,25 @@
+{% extends 'base.html' %}{%load static%} {%block content%} {% for blog in blog_list %}
+<img width="50%" src="{{food.photo.url}}"> {{blog_list.title}} {{blog.description}} {{blog.rate}} {%endfor%}
+
+<div class="row special-list">
+    {% for food in blog_list %}
+    <!-- <a href="{% url 'foods:detail' food.id %}"> -->
+    <div class="col-lg-4 col-md-6 special-grid {{food.type_food}}">
+        <div class="gallery-single fix">
+            <img src="{{food.photo.url}}" class="img-fluid" alt="Image">
+            <div class="why-text">
+                <h4>{{food.title}}</h4>
+                <p>{{food.description}}</p>
+                <h5>{{food.price}} تومان</h5>
+            </div>
+        </div>
+    </div>
+    </a>
+    {% endfor %}
+
+
+</div>
+</div>
+
+</div>
+{%endblock content%}
